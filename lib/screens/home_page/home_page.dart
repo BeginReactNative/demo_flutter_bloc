@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
   }
   @override
   Widget build(BuildContext context) {
+    print("render home page");
     return BlocProvider<CounterBloc>(
       bloc: _counterBloc,
       child: CounterPage()
@@ -32,8 +33,6 @@ class CounterBloc extends Bloc<CounterEvent, int> {
 
   @override
   Stream<int> mapEventToState(CounterEvent event) async* {
-        print("current State ---" + currentState.toString());
-    print("event---" + event.toString());
     switch (event) {
       case CounterEvent.increment:
         yield currentState + 1;

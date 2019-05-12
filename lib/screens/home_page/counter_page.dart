@@ -7,13 +7,13 @@ class CounterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final CounterBloc _counterBloc = BlocProvider.of<CounterBloc>(context);
-
-
+    print("render counter page");
     return Scaffold(
       appBar: AppBar(title: Text('Counter')),
       body: BlocBuilder<CounterEvent, int>(
         bloc: _counterBloc,
         builder: (BuildContext context, int count) {
+          print("render bloc");
           return Center(
             child: Text(
               '$count',
