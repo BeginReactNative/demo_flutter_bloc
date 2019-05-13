@@ -1,6 +1,12 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'bloc/post_bloc_delegate.dart';
 import 'screens/home_page/home_page.dart';
-void main() => runApp(MyApp());
+import 'screens/demo_list/posts_screen.dart';
+void main() {
+      BlocSupervisor().delegate = SimpleBlocDelegate();
+		runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -11,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: PostsScreen(),
     );
   }
 }

@@ -1,14 +1,9 @@
 function* greet1() {
-	yield 'hello'
-	yield 'world'
-	return 1
-  }
+	for(i=0;i<5;i++) {
+		yield i;
+	}
 
-  function* greet2() {
-	var returnValue = yield* greet1()
-	console.log(returnValue)
   }
-
-  for (let message of greet2()) {
-	console.log("message +" +message);
-  }
+var xx = greet1();
+console.log("ajkfdls" + xx.next().value);
+console.log("ajkfdls" + xx.next().value);
