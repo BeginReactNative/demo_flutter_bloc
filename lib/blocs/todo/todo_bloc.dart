@@ -32,7 +32,12 @@ class TodoBloc extends Bloc<TodoEvent, TodoState> {
   Stream<TodoState> _loadTodo() async* {
     try {
       final todos = await this.repository.loadTodos();
-      yield TodoStateLoaded(todos);
+      if(todos.length == 0) {
+        yield TodoStateEmpty();
+      } else {
+        yield TodoStateLoaded(todos);
+      }
+
     } catch (_) {
        yield TodoStateLoadError();
     }
