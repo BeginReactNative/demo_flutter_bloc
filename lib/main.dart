@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloc_partten/screens/demo_todo/todo_screen.dart';
 import 'package:flutter/material.dart';
 import 'bloc/post_bloc_delegate.dart';
 import 'screens/home_page/home_page.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: PostsScreen(),
+      home: TodoScreen(),
     );
   }
 }
