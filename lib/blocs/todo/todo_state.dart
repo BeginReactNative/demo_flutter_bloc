@@ -22,6 +22,12 @@ class TodoStateLoaded extends TodoState {
     return 'TodosLoaded { todos: $todos }';
   }
 }
+class TodoStateEmpty extends TodoState {
+  @override
+  String toString() {
+    return 'TodosEmpty';
+  }
+}
 class TodoStateLoadError extends TodoState {
   @override
   String toString() {
